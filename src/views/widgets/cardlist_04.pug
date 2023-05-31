@@ -1,0 +1,12 @@
+section
+    div.container
+        div.row
+            for clitem in data
+                div.col-12.col-md-4.d-flex
+                    div.card.text-center
+                        div.card-body.py-4
+                            img.icon(src=clitem.image)
+                            div
+                                h5.mt-2.mb-2!= clitem.title
+                                p!= clitem.text
+                                a(href=clitem.link)!= clitem.caption

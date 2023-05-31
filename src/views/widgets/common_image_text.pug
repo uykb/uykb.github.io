@@ -1,0 +1,13 @@
+section(class=data.class)
+    div.container
+        div.row.justify-content-center.align-items-center
+            -
+                var o1 = '';
+                var o2 = '';
+                if (data.imageleft) {
+                    o1 = 'order-1';
+                    o2 = 'order-0';
+                }
+            div.col-lg-6.pt-0.pb-0(class=o1)!= data.htmlcontent
+            div.col-lg-6.pt-0.pb-0(class=o2)
+                img.pt-md-0(src=data.image)

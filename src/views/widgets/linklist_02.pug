@@ -1,0 +1,7 @@
+section.bg-white
+    div.container
+        div.row.justify-content-around
+            for litem in data
+                div.col-6.col-md-2.mb-4.mb-sm-0.d-flex.justify-content-center
+                    a.custom-opacity-link(href=litem.link)
+                        img.icon(src=litem.image)

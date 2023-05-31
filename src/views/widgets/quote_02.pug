@@ -1,0 +1,16 @@
+section
+    img.bg-image(src=data.image)
+    div.container
+        div.row
+            div.col-md-7.col-lg-6.col-xl-5
+                div.card.card-body.p-4.p-lg-5.bg-light.shadow-lg
+                    div.d-flex.mb-3
+                        - var n = 0
+                        while n++ < data.stars
+                            i.material-icons.text-warning star
+                    span.h3.d-block.mb-4!= data.quote
+                    div.d-flex.align-items-center
+                        img.avatar(src=data.avatar)
+                        div.ml-2
+                            span.h6.d-block.mb-0!= data.name
+                            span!= data.career

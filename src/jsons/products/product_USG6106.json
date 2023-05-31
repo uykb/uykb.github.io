@@ -1,0 +1,148 @@
+[
+    {
+        "widget": "widgets/common_title_dark",
+        "data": 
+        {
+            "bg_image": "./assets/imgs/products/product_doc_bg.jpg",
+            "headline": "USG6106网络防火墙",
+            "descript": "并发连接数800000的下一代可扩展防火墙。",
+            "bclist": 
+            [
+                {
+                    "link": "./",
+                    "caption": "首页",
+                    "active": false
+                },
+                {
+                    "link": "./product_list.html",
+                    "caption": "产品中心",
+                    "active": false
+                }
+            ]
+        }
+    },
+    {
+        "widget": "products/product_tabs_content",
+        "data": 
+        [
+            {
+                "tabname": "产品综述",
+                "tabdata":
+                [
+                    {
+                        "widget": "products/product_tabs_text",
+                        "data": "<p><center><img class='img-fluid border rounded' src='./assets/imgs/products/product_USG6106_11.png'></center></p><p>USG6106，设备类型 下一代防火墙，并发连接数 800000，吞吐量 700Mbps，网络端口 4GE+2Combo。</p><p>可扩展插卡：2×10GE(SFP+)+8×GE(RJ45)，VPN支持，支持入侵检测。</p><p>USG6106防火墙杂音少可以放进办公室，常用的网络管理功能更便捷快速的实现网络管理；且主打性能优先的同时并没有牺牲掉用户体验，具备多样的安全控制和轻松的运行维护，简单上手，性价比高。 </p><p>一体化防护：集传统防火墙、VPN、数据防泄漏、带宽管理、Anti-DDoS、反垃圾邮件等多种功能于一身，全局配置视图和一体化策略管理；</p><p>应用识别与管控：识别6300+应用，访问控制精度到应用功能，例如：区分微信的文字和语音。应用识别与内容过滤相结合，提高检测性能和准确率；</p><p>数据防泄漏：对传输的文件和内容进行识别过滤，可准确识别常见文件的真实类型，如Word、Excel、PPT、PDF等，并对敏感内容进行过滤；</p><p>带宽管理：在识别业务应用的基础上，可管理每用户/IP使用的带宽, 确保关键业务和关键用户的网络体验。管控方式包括：限制最大带宽或保障最小带宽、应用的策略路由、修改应用转发优先级等；</p><p>业务智能选路：支持基于业务的策略路由，在多出口场景下可根据多种负载均衡算法（如带宽比例、链路健康状态等）进行智能选路；</p><p>SSL加密流量过滤：可以对HTTPS访问网站的内容及URL进行过滤及审计，可以对加密的邮件（IMAPs，SMTPS，POP3S）内容进行过滤及审计；</p><p>智能策略管理（SmartPolicy）：支持策略冲突和冗余检测，发现冗余的和长期未使用策略，有效控制策略规模；</p><p>基础用户的防护：支持多种用户认证方式，包括本地， RADIUS， Hwtacacs， SecureID， AD， CA， LDAP， Endponit Security等</p><p>安全虚拟化：支持多种安全业务的虚拟化，包括防火墙，VPN等。不同用户可在同一台物理设备上进行隔离的个性化管理。</p><p>丰富的报表：可视化多维度报表呈现，支持用户，应用，内容，时间，流量，威胁，URL等多维度呈现报表；</p><p>通过华为安全中心平台生成“网络安全分析报告”，对当前网络的安全状态进行评估，并给出相关优化建议；</p><p>部署方式：透明，路由，混合部署模式，支持主/主，主/备HA特性。</p>"
+                    }
+                ]
+            },
+            {
+                "tabname": "产品参数",
+                "tabdata":
+                [
+                    {
+                        "widget": "products/product_tabs_text",
+                        "data": "<h5>基本参数</h5>"
+                    },
+                    {
+                        "widget": "products/product_AB_table",
+                        "data": 
+                        {
+                            "header_cols": [],
+                            "header_rows": [],
+                            "focus_cols": [],
+                            "focus_rows": [],
+                            "table_data":
+                            [
+                                ["产品型号","USG6106"],
+                                ["外形尺寸","442×421×44.4mm"],
+                                ["重量","10Kg"]
+                            ]
+                        }
+                    },
+                    {
+                        "widget": "products/product_tabs_text",
+                        "data": "<h5>硬件参数</h5>"
+                    },
+                    {
+                        "widget": "products/product_AB_table",
+                        "data": 
+                        {
+                            "header_cols": [],
+                            "header_rows": [],
+                            "focus_cols": [],
+                            "focus_rows": [],
+                            "table_data":
+                            [
+                                ["固定接口","4GE+2Combo"],
+                                ["扩展插槽","2×10GE（SFP+）+8×GE（RJ45）, 8×GE（RJ45）, 8×GE（SFP+）,4×GE（RJ45）BYPASS"]
+                            ]
+                        }
+                    },
+                    {
+                        "widget": "products/product_tabs_text",
+                        "data": "<h5>网络与软件</h5>"
+                    },
+                    {
+                        "widget": "products/product_AB_table",
+                        "data": 
+                        {
+                            "header_cols": [],
+                            "header_rows": [],
+                            "focus_cols": [],
+                            "focus_rows": [],
+                            "table_data":
+                            [
+                                ["VPN","支持VPN功能,IPSec VPN，SSL VPN，L2TPVPN，MPLS VPN，GRE等"],
+                                ["功能特点","一体化防护：集传统防火墙、VPN、数据防泄漏、带宽管理、Anti-DDoS、反垃圾邮件等多种功能于一身，全局配置视图和一体化策略管理；<br>应用识别与管控：识别6300+应用，访问控制精度到应用功能，例如：区分微信的文字和语音。应用识别与内容过滤相结合，提高检测性能和准确率；<br>数据防泄漏：对传输的文件和内容进行识别过滤，可准确识别常见文件的真实类型，如Word、Excel、PPT、PDF等，并对敏感内容进行过滤；<br>带宽管理：在识别业务应用的基础上，可管理每用户/IP使用的带宽, 确保关键业务和关键用户的网络体验。管控方式包括：限制最大带宽或保障最小带宽、应用的策略路由、修改应用转发优先级等；<br>业务智能选路：支持基于业务的策略路由，在多出口场景下可根据多种负载均衡算法（如带宽比例、链路健康状态等）进行智能选路；<br>SSL加密流量过滤：可以对HTTPS访问网站的内容及URL进行过滤及审计，可以对加密的邮件（IMAPs，SMTPS，POP3S）内容进行过滤及审计；<br>智能策略管理（SmartPolicy）：支持策略冲突和冗余检测，发现冗余的和长期未使用策略，有效控制策略规模；<br>基础用户的防护：支持多种用户认证方式，包括本地， RADIUS， Hwtacacs， SecureID， AD， CA， LDAP， Endponit Security等<br>安全虚拟化：支持多种安全业务的虚拟化，包括防火墙，VPN等。不同用户可在同一台物理设备上进行隔离的个性化管理。<br>丰富的报表：可视化多维度报表呈现，支持用户，应用，内容，时间，流量，威胁，URL等多维度呈现报表；<br>通过华为安全中心平台生成“网络安全分析报告”，对当前网络的安全状态进行评估，并给出相关优化建议；<br>部署方式：透明，路由，混合部署模式，支持主/主，主/备HA特性。"]
+                            ]
+                        }
+                    },
+                    {
+                        "widget": "products/product_tabs_text",
+                        "data": "<h5>其它参数</h5>"
+                    },
+                    {
+                        "widget": "products/product_AB_table",
+                        "data": 
+                        {
+                            "header_cols": [],
+                            "header_rows": [],
+                            "focus_cols": [],
+                            "focus_rows": [],
+                            "table_data":
+                            [
+                                ["电源电压","100-240V"],
+                                ["最大功率","170W"],
+                                ["其它","工作环境：温度：0℃-45℃（不含硬盘）/5℃-40℃（包含硬盘）；<br>湿度：5%-95%（不含硬盘）/5%-90%（包含硬盘）<br>非工作环境：温度：-40℃-70℃；湿度：5%-95%"]
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "tabname": "产品图片",
+                "tabdata":
+                [
+                    {
+                        "widget": "products/product_AB_image_list",
+                        "data": 
+                        [
+                            "./assets/imgs/products/product_F100CG2_11.jpg",
+                            "./assets/imgs/products/product_F100CG2_12.jpg",
+                            "./assets/imgs/products/product_F100CG2_13.jpg",
+                            "./assets/imgs/products/product_F100CG2_14.jpg",
+                            "./assets/imgs/products/product_F100CG2_15.jpg"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "widget": "widgets/common_space",
+        "data": 
+        {
+            "class": "bg-white pb-4 pb-lg-5"
+        }
+    }
+]

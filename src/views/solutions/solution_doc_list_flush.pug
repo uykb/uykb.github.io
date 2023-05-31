@@ -1,0 +1,15 @@
+div.bg-white
+    div.container
+        div.row.justify-content-center.pb-2.pb-md-3
+            div.col-12.col-md-11.col-lg-10.col-xl-9
+                headline
+                    h3= data.headline
+                article
+                    p.font-bolder
+                        ul.list-group.list-group-flush
+                            each litem in data.listitems
+                                if (litem.link != "") && (litem.link != undefined)
+                                    li.list-group-item
+                                        a(href=litem.link, target="_blank")= litem.caption
+                                else
+                                    li.list-group-item= litem.caption

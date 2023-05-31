@@ -1,0 +1,87 @@
+[
+    {
+        "widget": "widgets/common_title_light",
+        "data": 
+        {
+            "bg_image": "./assets/imgs/solutions/solution_list_bg.jpg",
+            "headline": "解决方案",
+            "descript": "为通信行业精心设计、追求卓越的企业应用解决方案。",
+            "button_caption": "",
+            "button_link": "",
+            "bclist": 
+            [
+                {
+                    "link": "./",
+                    "caption": "首页",
+                    "active": false
+                },
+                {
+                    "link": "./solution_list.html",
+                    "caption": "解决方案",
+                    "active": true
+                }
+            ]
+        }
+    },
+    {
+        "widget": "widgets/common_space",
+        "data": 
+        {
+            "class": "bg-white pt-4 pb-5"
+        }
+    },
+    {
+        "widget": "solutions/solution_image_left",
+        "data": 
+        {
+            "id": "solution_A201905",
+            "bg_image": "./assets/imgs/header-1.jpg",
+            "headline": "网络构建解决方案",
+            "descript": "简单易用，拥有健壮的索引系统和智能压缩技术；满足法规遵从，快速邮件检索，支持移动终端管理。",
+            "button_caption": "查看详情 More..."
+        }
+    },
+    {
+        "widget": "widgets/common_space",
+        "data": 
+        {
+            "class": "bg-white pt-4 pb-5"
+        }
+    },
+    {
+        "widget": "solutions/solution_image_right",
+        "data": 
+        {
+            "id": "solution_B201901",
+            "bg_image": "./assets/imgs/header-2.jpg",
+            "headline": "电商行业解决方案",
+            "descript": "以云服务为基础，结合行业平台服务，提供一体化的解决方案， 适合快速发展的电商公司快速搭建平台。",
+            "button_caption": "查看详情 More..."
+        }
+    },
+    {
+        "widget": "widgets/common_space",
+        "data": 
+        {
+            "class": "bg-white pt-4 pb-5"
+        }
+    },
+    {
+        "widget": "solutions/solution_image_left",
+        "data": 
+        {
+            "id": "",
+            "bg_image": "./assets/imgs/header-3.jpg",
+            "headline": "数据维护解决方案",
+            "descript": "涵盖制造、信息技术、互联网、航空、陆运、海运各行业客户，涵盖制造、信息技术、互联网、航空、陆运、海运各行业客户。",
+            "button_caption": "查看详情 More..."
+        }
+    },
+    {
+        "widget": "widgets/common_space",
+        "data": 
+        {
+            "class": "bg-white pt-4 pb-5"
+        }
+    }
+]

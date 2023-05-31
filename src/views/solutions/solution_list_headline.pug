@@ -1,0 +1,26 @@
+section.bg-light.pb-0.pt-5
+    div.container
+        div.pb-0.pt-3
+            div.row.justify-content-center.align-items-center
+                div.col-lg-6.mb-3.mb-sm-0.order-lg-1
+                    div.mb-0.mx-xl-3
+                        h1!= data.headline
+                    if data.descript != '' && data.descript != undefined
+                        div.mb-0.mx-xl-3
+                            p.lead!= data.descript
+                    div.list-group.mb-0.mx-xl-3.border.rounded
+                        - var link = '#';
+                        each litem in data.solutionlist
+                            - 
+                                if (litem.id != '' && litem.id != undefined) {
+                                    link = `${litem.id}.html`;
+                                } else {
+                                    link ='#';
+                                }
+                            a.list-group-item.list-group-item-action.d-flex.justify-content-between.align-items-center(href=link)
+                                div.d-flex.align-items-center
+                                    img.d-block.mr-3.icon(src=litem.icon)
+                                    span.mb-0.h6.mb-0!= litem.caption
+                                i.fas.fa-angle-right.fa-lg
+                div.col-lg-6.order-lg-0
+                    img.pt-md-5.pt-lg-0(src=data.bg_image)

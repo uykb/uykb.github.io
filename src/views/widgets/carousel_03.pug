@@ -1,0 +1,12 @@
+section.o-hidden
+    div.container
+        div.slider-highlight-selected(data-flickity='{ "cellAlign": "center", "contain": true, "imagesLoaded": true, "wrapAround": true }')
+            for ditem in data
+                div.col-md-6.col-xl-5.text-center.carousel-cell
+                    div.d-flex.justify-content-center.mb-3
+                        - var n = 0
+                        while n++ < ditem.stars
+                            i.material-icons.text-warning star
+                    span.h4.d-block!= ditem.quote
+                    img.avatar.mr-2(src=ditem.avatar)
+                    span.d-block.mt-2!= `${ditem.name}, ${ditem.career}`

@@ -1,0 +1,17 @@
+section.bg-white
+    img.bg-image(src=data.bg_image)
+    div.container.height-md-30
+        div.row
+            div.col-md-10.col-lg-9.col-xl-8
+                nav(aria-label="breadcrumb")
+                    ol.breadcrumb.p-0.bg-transparent
+                        for bcitem in data.bclist
+                            if bcitem.active
+                                li.breadcrumb-item.active.text-dark(aria-current="page")= bcitem.caption
+                            else
+                                li.breadcrumb-item
+                                    a.text-dark(href=bcitem.link)= bcitem.caption
+                h1.display-4.text-black!= data.headline
+                p.lead.mb-0.text-dark!= data.descript
+                if (data.button_caption != '') && (data.button_caption != undefined)
+                    a.btn.btn-lg.btn-warning(href=data.button_link)!= data.button_caption

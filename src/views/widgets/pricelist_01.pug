@@ -1,0 +1,27 @@
+section
+    div.container
+        div.row
+            each pitem in data
+                - var card_bgcolor = "bg-primary"
+                - var text_color = "text-white"
+                - if (pitem.promotion === "") {
+                -     card_bgcolor = "bg-white"
+                -     text_color = "text-dark"
+                - }
+                div.col-md-4
+                    div(class=`card py-3 px-xl-3 ${card_bgcolor}`)
+                        div(class=`card-body ${text_color}`)
+                            span.h6.d-block!= pitem.category
+                                if pitem.promotion != ''
+                                    |  
+                                    span.badge.badge-warning!= pitem.promotion
+                            span.d-block.display-4.mb-2!= pitem.price
+                            p!= pitem.descript
+                            if pitem.button_caption != ''
+                                if pitem.promotion != ''
+                                    a.text-white(href=pitem.button_link)!= pitem.button_caption
+                                else
+                                    a(href=pitem.button_link)!= pitem.button_caption
+                    ul
+                        each flitem in pitem.feature_list
+                            li.mb-2!= flitem

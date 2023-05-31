@@ -1,0 +1,45 @@
+section.bg-dark
+    div.container
+        div.row.justify-content-center
+            div.col-xl-9.col-lg-10
+                form.wizard.card
+                    ul.nav.nav-tabs.card-header.text-center.bg-light.p-0
+                        li.nav-item.flex-fill
+                            a.nav-link(href="#step1") 1. 选择款式
+                        li.nav-item.flex-fill
+                            a.nav-link(href="#step2") 2. 选择颜色
+                        li.nav-item.flex-fill
+                            a.nav-link(href="#step3") 3. 选择尺码
+                        li.nav-item.flex-fill
+                            a.nav-link(href="#step4") 4. 为您推荐
+                    div.tab-content
+                        div#step1
+                            div.card-body.py-4
+                                div.text-center
+                                    span.h1.d-block 你喜欢的款式？
+                                    p.h3.lead 经典款
+                                    p.h3.lead 复古风
+                                    p.h3.lead.mb-3 非主流
+                                    button.btn.btn-primary.sw-btn-next 下一步
+                        div#step2
+                            div.card-body.py-4
+                                div.text-center
+                                    span.h1.d-block 你喜欢的颜色？
+                                    p.h2.lead.mb-3 红 / 蓝 / 粉 / 绿
+                                    button.btn.btn-info.sw-btn-next 下一步
+                        div#step3
+                            div.card-body.py-4
+                                div.text-center
+                                    span.h1.d-block 你喜欢的尺码？
+                                    p.h2.lead.mb-3 小 ～ 中 ～ 大 ～ 超大
+                                    button.btn.btn-warning.sw-btn-next 下一步
+                        div#step4
+                            div.card-body.py-4
+                                div.text-center
+                                    span.h1.d-block 我们为您选择的是
+                                    p.lead.mb-3 
+                                        span.h1.d-block.text-warning Model：1234567
+                                    button.btn.btn-success.sw-btn-next 提交
+                div.card-footer.text-center
+                    small 选择困难症？ <a href="#contact">联系我们</a>
+

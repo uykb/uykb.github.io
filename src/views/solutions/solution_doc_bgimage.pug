@@ -1,0 +1,9 @@
+section.p-0.bg-dark
+    img.bg-image.position-md-absolute.img-fluid(src=data.bg_image)
+    div.container.py-4.height-md-100
+        div.row
+            div.col-md-4.col-lg-3.spacer-y-2
+                h3.text-light!= data.headline
+                p!= data.descript
+                if data.button_caption != '' && data.button_caption != undefined
+                    a.btn.btn-lg.btn-primary.text-white(href=data.button_link)!= data.button_caption

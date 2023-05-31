@@ -1,0 +1,23 @@
+section
+    div.container
+        div.row
+            each pitem in data
+                div.col-md-4.d-flex
+                    div.card.flex-fill.text-center.shadow
+                        if pitem.promotion != ''
+                            span.badge.badge-md.badge-success.position-absolute
+                                i.material-icons star
+                                span!= pitem.promotion
+                        div.card-body.pt-4
+                            div.mb-3
+                                span.h4.d-block!= pitem.category
+                                div.d-flex.justify-content-center.align-items-center
+                                    span.h1.display-3!= pitem.price
+                                span.text-muted!= pitem.descript
+                                ul.list-unstyled.lead.mt-3.mb-3
+                                    each flitem in pitem.feature_list
+                                        li.mt-1!= flitem
+                                if pitem.button_caption != ''
+                                    a.btn.btn-primary(class=text_color, href=pitem.button_link)!= pitem.button_caption
+                        div.card-footer
+                            span.text-small!= pitem.addition_note

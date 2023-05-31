@@ -1,0 +1,17 @@
+section.header-3.p-0
+    img.bg-image(src=data.bg_image)
+    div.container
+        div.row.no-gutters.justify-content-center.justify-content-md-start
+            div.col-10.col-md-8.col-lg-7.col-xl-6.bg-white.spacer-y-4.height-60.height-md-70.opacity-80
+                div.px-4
+                    h1.display-4.d-block!= data.headline
+                    p.lead!= data.descript
+                    //-form.d-flex
+                        div.input-group.input-group-lg.mr-2
+                            div.input-group-prepend
+                                span.input-group-text
+                                    i.material-icons search
+                            input.form-control(type="text", placeholder="搜索", aria-label="Search")
+                        button.btn.btn-primary.btn-lg(type="submit")!= data.button_caption
+                    if data.button_caption != ''
+                        a.btn.btn-lg.btn-success.text-white(href=data.button_link)!= data.button_caption

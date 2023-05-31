@@ -1,0 +1,9 @@
+section
+    div.container
+        div.row
+            for clitem in data
+                div.col-6.col-md-3.d-flex
+                    a.card.text-center.flex-fill.hover-effect(href=clitem.link)
+                        div.card-body.d-flex.flex-column.align-items-center.justify-content-center.py-2
+                            img.icon.mt-2.mb-3(src=clitem.image)
+                            span.h6.mb-2!= clitem.text

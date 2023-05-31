@@ -1,0 +1,11 @@
+section
+    div.container
+        div.row
+            for clitem in data
+                div.col-6.col-lg-3.d-flex
+                    a.card.hover-effect(href=clitem.link)
+                        img.card-img-top(src=clitem.image)
+                        div.card-body
+                            div.d-flex.justify-content-between.align-items-center
+                                h6.mb-0!= clitem.text
+                                i.material-icons.text-dark keyboard_arrow_right

@@ -1,0 +1,14 @@
+section
+    div.container
+        div.row
+            div.col
+                div.slider-cards(data-flickity='{ "cellAlign": "left", "contain": true, "imagesLoaded": true, "wrapAround": true }')
+                    for ditem in data
+                        div.carousel-cell
+                            img.rounded(src=ditem.bg_image)
+                            div.card.col-lg-5.col-xl-4.py-2.flex-fill
+                                div.card-body
+                                    span.d-block.h1.d-block!= ditem.headline
+                                    p.lead!= ditem.descript
+                                    if ditem.button_caption != ''
+                                        a.btn.btn-primary.btn-lg(href=ditem.button_link)!= ditem.button_caption   

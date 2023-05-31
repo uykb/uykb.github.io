@@ -1,0 +1,30 @@
+section
+    div.container
+        div.row
+            div.col
+                table.table-responsive.table-borderless
+                    each row, rowid in data.table_data
+                        if data.header_rows.indexOf(rowid) >= 0
+                            tr
+                                each cell, colid in row
+                                    if data.header_cols.indexOf(colid) >= 0
+                                        th(scope="col")!= cell
+                                    else
+                                        th.bg-primary.text-white.p-2.p-lg-3.border(scope="col")!= cell
+                        else if data.focus_rows.indexOf(rowid) >= 0
+                            tr
+                                each cell, colid in row
+                                    if data.header_cols.indexOf(colid) >= 0
+                                        th.pr-lg-3(scope="row")!= cell
+                                    else
+                                        td.bg-white.p-2.p-lg-3.border.font-weight-bold!= cell
+                        else
+                            tr
+                                each cell, colid in row
+                                    if  data.header_cols.indexOf(colid) >= 0
+                                        th.pr-lg-3(scope="row")!= cell
+                                    else
+                                        if data.focus_cols.indexOf(colid) >= 0
+                                            td.bg-white.p-2.p-lg-3.border.font-weight-bold!= cell
+                                        else
+                                            td.bg-light.p-2.p-lg-3.border!= cell

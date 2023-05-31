@@ -1,0 +1,16 @@
+section
+    div.container
+        div.row
+            each clitem in data
+                div.col-6.col-lg-3.d-flex
+                    -
+                        var button_link = '#';
+                        if (clitem.id != '' && clitem.id != undefined) {
+                            button_link = `${clitem.id}.html`;
+                        }
+                    a.card.hover-effect(href=button_link)
+                        img.card-img-top(src=clitem.image)
+                        div.card-body
+                            div.d-flex.justify-content-between.align-items-center
+                                h6.mb-0!= clitem.text
+                                i.material-icons.text-dark keyboard_arrow_right

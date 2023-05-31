@@ -1,0 +1,152 @@
+[
+    {
+        "widget": "widgets/common_title_dark",
+        "data": 
+        {
+            "bg_image": "./assets/imgs/products/product_doc_bg.jpg",
+            "headline": "F100-C-G2网络防火墙",
+            "descript": "企业网络的守护神，荣获无数国际荣誉的新一代网络安全架构核心产品。",
+            "bclist": 
+            [
+                {
+                    "link": "./",
+                    "caption": "首页",
+                    "active": false
+                },
+                {
+                    "link": "./product_list.html",
+                    "caption": "产品中心",
+                    "active": false
+                }
+            ]
+        }
+    },
+    {
+        "widget": "products/product_AB_content",
+        "data": 
+        [
+            {
+                "widget": "products/product_AB_tag",
+                "data": 
+                {
+                    "title": "产品描述",
+                    "id": "tag_CPMS"
+                }
+            },
+            {
+                "widget": "products/product_AB_text",
+                "data": 
+                {
+                    "headline": "",
+                    "htmlcontent": "<p><center><figure class=\"figure\"><img class=\"figure-img img-fluid rounded\" src=\"./assets/imgs/products/product_F100CG2_02.jpg\"><figcaption class=\"figure-caption\"></figcaption></figure></center></p><p>伴随Web2.0时代的到来，结合当前安全与网络深入融合的技术趋势，新华三针对SOHO企业、小型分支机构推出的下一代高性能防火墙：H3C SecPath F100-C-G2。该下一代防火墙在功能上能够支持多维度的用户识别、海量应用流量识别、4-7层深度安全防御引擎、链路负载均衡等功能，能够很好的满足企业对于网络安全的最真实需求。</p>"
+                }
+            },
+            {
+                "widget": "products/product_AB_tag",
+                "data": 
+                {
+                    "title": "关键指标",
+                    "id": "tag_GJZB"
+                }
+            },
+            {
+                "widget": "products/product_AB_text",
+                "data": 
+                {
+                    "headline": "关键指标",
+                    "htmlcontent": ""
+                }
+            },
+            {
+                "widget": "products/product_AB_table",
+                "data": 
+                {
+                    "header_cols": [0],
+                    "header_rows": [0],
+                    "focus_cols": [0],
+                    "focus_rows": [],
+                    "table_data":
+                    [
+                        ["","F100-C-G2/8M","F100-C-G2/16M","F100-C-G2/32M"],
+                        ["网络端口","8GE + 2GE(Bypass) + 2Combo","16GE + 4GE(Bypass) + 2Combo","32GE + 4GE(Bypass) + 4Combo"],
+                        ["控制端口","2 x USB","2 x USB","4 x USB"],
+                        ["设备类型","企业级防火墙纠错","企业级防火墙NDOS纠错","企业级防火墙NETX纠错"],
+                        ["安全过滤带宽","600Mbps","1200Mbps","3600Mbps"],
+                        ["用户数限制","300","500","1000"],
+                        ["VPN支持","<i class='material-icons text-success'>check</i>","<i class='material-icons text-success'>check</i>","<i class='material-icons text-success'>check</i>"],
+                        ["VPN/FX支持","<i class='material-icons text-danger'>close</i>","<i class='material-icons text-success'>check</i>","<i class='material-icons text-success'>check</i>"]
+                    ]
+                }
+            },
+            {
+                "widget": "widgets/common_space",
+                "data": 
+                {
+                    "class": "bg-white pb-1 pb-lg-3"
+                }
+            },
+            {
+                "widget": "products/product_AB_tag",
+                "data": 
+                {
+                    "title": "图文参数",
+                    "id": "tag_TWCS"
+                }
+            },
+            {
+                "widget": "products/product_AB_image_list",
+                "data": 
+                [
+                    "./assets/imgs/products/product_F100CG2_11.jpg",
+                    "./assets/imgs/products/product_F100CG2_12.jpg",
+                    "./assets/imgs/products/product_F100CG2_13.jpg",
+                    "./assets/imgs/products/product_F100CG2_14.jpg",
+                    "./assets/imgs/products/product_F100CG2_15.jpg",
+                    "./assets/imgs/products/product_F100CG2_16.jpg",
+                    "./assets/imgs/products/product_F100CG2_17.jpg",
+                    "./assets/imgs/products/product_F100CG2_18.jpg"
+                ]
+            },
+            {
+                "widget": "products/product_AB_tag",
+                "data": 
+                {
+                    "title": "文件下载",
+                    "id": "tag_WJXZ"
+                }
+            },
+            {
+                "widget": "widgets/common_space",
+                "data": 
+                {
+                    "class": "bg-white pb-1 pb-lg-3"
+                }
+            },
+            {
+                "widget": "products/product_AB_download",
+                "data": 
+                {
+                    "headline": "产品手册下载",
+                    "downloads": 
+                    [
+                        {
+                            "caption": "F100-C-G2网络防火墙产品手册",
+                            "link": "./assets/downloads/example.pptx"
+                        },
+                        {
+                            "caption": "F100-C-G2网络防火墙驱动程序（Win7/8/10平台）",
+                            "link": "./assets/downloads/example.zip"
+                        }
+                    ]
+                }
+            },
+            {
+                "widget": "widgets/common_space",
+                "data": 
+                {
+                    "class": "bg-white pb-1 pb-lg-3"
+                }
+            }
+        ]
+    }
+]

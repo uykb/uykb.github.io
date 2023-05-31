@@ -1,0 +1,11 @@
+div.container
+    each clitem in data
+        div.row
+            div.col-12.pb-3
+                span.h5= clitem.branchname
+            div.col-12.col-md-7
+                each htmlitem in clitem.htmlinfolist
+                    p!= htmlitem
+            div.col-12.col-md-4.pb-3
+                if (clitem.image != '') && (clitem.image != undefined)
+                    img.img-flush(src=clitem.image)

@@ -1,0 +1,17 @@
+section.bg-light.pb-0.pt-5
+    div.container
+        div.pb-0
+            div.row.justify-content-center.align-items-center
+                div.col-lg-6.mb-3.mb-lg-0
+                    img.pt-md-5.pt-lg-0.rounded.shadow(src=data.image)
+                div.col-lg-5
+                    div.accordion(id="accordionSample").p-0.ml-lg-3
+                        each item, index in data.accordionlist
+                            div.card.m-0.bg-light
+                                div.p-0(id=`heading-${index}`)
+                                    span
+                                        button.btn.btn-link(type="button", data-toggle="collapse", data-target=`#collapse-${index}`, aria-expanded="false", aria-controls=`collapse-${index}`)
+                                            i.mr-3(class=item.faicon)
+                                            span.h3.text-success!= item.headline
+                            div.collapse(id=`collapse-${index}`, aria-labelledby=`heading-${index}`, data-parent="#accordionSample")
+                                div.card-body.h4!= item.htmlcontent

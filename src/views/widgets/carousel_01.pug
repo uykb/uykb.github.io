@@ -1,0 +1,11 @@
+section.controls-inside.p-0.controls-light.bg-dark(data-flickity='{ "autoPlay": true, "cellAlign": "left", "contain": true, "imagesLoaded": true, "wrapAround": true, "prevNextButtons": true }')
+    for ditem in data
+        div.height-80.carousel-cell.py-3.py-md-4
+            img.bg-image.opacity-70(src=ditem.bg_image)
+            div.container
+                div.row
+                    div.col-12.col-md-8
+                        h1.display-4.text-white!= ditem.headline
+                        p.lead.text-white!= ditem.descript
+                        if ditem.button_caption != ''
+                            a.btn.btn-primary.btn-lg(href=ditem.button_link)!= ditem.button_caption

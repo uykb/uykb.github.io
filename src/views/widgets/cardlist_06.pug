@@ -1,0 +1,10 @@
+section
+    div.container
+        div.row
+            for clitem in data
+                div.col-12.col-md-4
+                    a.card.bg-dark.ext-center.justify-content-center.align-items-center(href=clitem.link)
+                        img.card-img.bg-light.opacity-30(src=clitem.image)
+                        div.card-img-overlay
+                            h5.mb-3.text-white!= clitem.title
+                            p.text-light!= clitem.text

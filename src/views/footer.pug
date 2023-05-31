@@ -1,0 +1,31 @@
+footer.p-0
+  div.container-fluid.custom-footer-bgcolor.p-0.p-md-3
+    div.container.pt-3.pb-3
+      div.d-flex.justify-content-between.row
+        div.col-lg-4.col-12.order-12
+          div.d-flex.justify-content-end.pr-3
+            span= data.getintouchinfo.headline
+          div
+            ul.list-social-links.justify-content-end.pr-3
+              each gitem in data.getintouchinfo.data
+                li.text-white
+                  a(href=gitem.href, target="_blank", rel=gitem.ref)
+                    i(class=gitem.faicon)
+        div.col-md-8.col-12.order-1
+            ul.list-inline
+            each linkitem in data.links
+                if linkitem.href == ''
+                    li.list-inline-item= linkitem.title
+                else
+                    li.list-inline-item
+                        a(href=linkitem.href)= linkitem.title
+      div.d-flex.justify-content-center.pt-3
+        div.col-12.text-center
+            hr.bg-secondary
+            span
+                a(href="/", alt=data.footersitename)
+                    img.d-inline-block.align-top(src=data.footersitelogo, height="20", alt=data.footersitename)
+                    |  
+                    span #{data.footersitename}
+                    |  
+            span!= data.copyright

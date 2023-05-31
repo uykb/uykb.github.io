@@ -1,0 +1,12 @@
+div.container
+    div.row.pb-3
+        each clitem in data
+            div.col-lg-4.col-md-6
+                div.card
+                    img.card-img-top(src=clitem.image)
+                    div.card-body
+                        h6.card-title.text-center= clitem.title
+                        h5.card-title.text-center= clitem.name
+                        div
+                            each htmlitem in clitem.htmlinfolist
+                                p.card-text!= htmlitem

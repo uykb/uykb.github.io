@@ -1,0 +1,10 @@
+extends template_base
+
+block header-scripts
+
+block footer-scripts
+    script(type="text/javascript", src="./cdn/js/flickity.pkgd.min.js")
+    script.
+        $(document).ready(function() {
+            $(".top-menu-item:eq(-1)").addClass("active");
+        });

@@ -1,0 +1,160 @@
+/*-----------------------------------------------------------------------------------------
+  Smooth scroll with only CSS.
+-----------------------------------------------------------------------------------------*/
+html {
+	scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+/*-----------------------------------------------------------------------------------------
+  Custom Shadow Style.
+-----------------------------------------------------------------------------------------*/
+.custom-text-shadow-1px {
+    text-shadow: 1px 1px 1px darkgray;
+    -webkit-text-shadow: 1px 1px 1px darkgray;
+    -moz-text-shadow: 1px 1px 1px darkgray;
+    -ms-text-shadow: 1px 1px 1px darkgray
+}
+.custom-text-shadow-2px {
+    text-shadow: 2px 2px 2px darkgray;
+    -webkit-text-shadow: 2px 2px 2px darkgray;
+    -moz-text-shadow: 2px 2px 2px darkgray;
+    -ms-text-shadow: 2px 2px 2px darkgray
+}
+.custom-text-shadow-3px {
+    text-shadow: 3px 3px 3px darkgray;
+    -webkit-text-shadow: 3px 3px 3px darkgray;
+    -moz-text-shadow: 3px 3px 3px darkgray;
+    -ms-text-shadow: 3px 3px 3px darkgray
+}
+.custom-text-shadow-white-1px {
+    text-shadow: 1px 1px 1px white;
+    -webkit-text-shadow: 1px 1px 1px white;
+    -moz-text-shadow: 1px 1px 1px white;
+    -ms-text-shadow: 1px 1px 1px white;
+}
+.custom-text-shadow-white-2px {
+    text-shadow: 2px 2px 2px white;
+    -webkit-text-shadow: 2px 2px 2px white;
+    -moz-text-shadow: 2px 2px 2px white;
+    -ms-text-shadow: 2px 2px 2px white;
+}
+
+/*-----------------------------------------------------------------------------------------
+  Custom Responsive Card Columns Set.
+-----------------------------------------------------------------------------------------*/
+@media (min-width: 576px) {
+    .card-columns {
+        column-count: 1;
+    }
+}
+@media (min-width: 768px) { 
+    .card-columns {
+        column-count: 3;
+    }
+}
+@media (min-width: 992px) { 
+    .card-columns {
+        column-count: 4;
+    }
+}
+
+/*-----------------------------------------------------------------------------------------
+Go To Top, code comes from Bootstrap
+-----------------------------------------------------------------------------------------*/
+.u-go-to {
+    display: none;
+    position: relative;
+    z-index: 101;
+    width: 36px;
+    height: 36px;
+    background-color: rgb(36, 160, 243);
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    opacity: 0.75;
+    transition: 0.2s ease-out;
+}
+.u-go-to__inner {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.u-go-to:hover, .u-go-to:focus:hover {
+    color: #fff;
+    opacity: 1;
+}
+
+/*-----------------------------------------------------------------------------------------
+For Header.
+-----------------------------------------------------------------------------------------*/
+.custom-header-bgcolor {
+    background-color: #dbe2ff;
+}
+
+/*-----------------------------------------------------------------------------------------
+For Footer.
+-----------------------------------------------------------------------------------------*/
+.custom-footer-bgcolor {
+    background-color: #0e0d3a;
+}
+
+footer a {
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(185, 185, 185);
+}
+footer a:hover {
+    text-decoration: none;
+    color: #dac71a; 
+}
+
+/*-----------------------------------------------------------------------------------------
+For linklist_02/brandlink_list
+-----------------------------------------------------------------------------------------*/
+.custom-opacity-link img {
+    opacity: 0.45;
+    height: 4.75em;
+	text-align:center;
+}
+.custom-opacity-link img:hover {
+    opacity: 1;
+    height: 5.25em;
+}
+
+.custom-brand-link {
+    opacity: 0.55;
+}
+.custom-brand-link:hover {
+    opacity: 1;
+    /* box-shadow: 0 0 0 0.2rem rgba(0, 153, 255, 0.25); */
+}
+
+/*-----------------------------------------------------------------------------------------
+For News
+-----------------------------------------------------------------------------------------*/
+.custom-indent-half {
+    text-indent: 0.5em;
+}
+.custom-indent-1 {
+    text-indent: 1em;
+}
+.custom-indent-2 {
+    text-indent: 2em;
+}
+.custom-news-title {
+    line-height: 1.5em;
+}
+article p {
+    text-indent: 2em;
+    line-height: 2em;
+    color: black;
+}

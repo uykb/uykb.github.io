@@ -1,0 +1,15 @@
+section
+    div.container
+        div.row
+            for clitem in data
+                div.col-12.col-md-4.d-flex
+                    div.card
+                        img.card-img-top(src=clitem.image)
+                        div.card-body.py-3
+                            h5!= clitem.title
+                            div.mb-4
+                                p!= clitem.text
+                        div.card-footer
+                            div.d-flex.justify-content-between.align-items-center
+                                a(href=clitem.link)!= clitem.caption
+                                i.material-icons.text-dark keyboard_arrow_right

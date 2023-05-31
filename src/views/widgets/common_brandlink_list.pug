@@ -1,0 +1,10 @@
+section(class=data.class)
+    div.container
+        div.row.justify-content-around
+            each item in data.brandlist
+                div.col-6.col-lg.col-md-2.mb-4.mb-sm-0.d-flex.justify-content-center
+                    if item.link != '' && item.link != undefined
+                        a(href=item.link, target="_blank")
+                            img.icon.icon-lg.custom-brand-link(src=item.logo)
+                    else
+                        img.icon.icon-lg.custom-brand-link(src=item.logo)

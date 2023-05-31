@@ -1,0 +1,18 @@
+extends template_base
+
+block header-scripts
+
+block footer-scripts
+    //- Go to Top Begin
+    a.js-go-to.u-go-to(href="javascript:;", data-position='{"bottom": 15, "right": 15 }', data-type="fixed", data-offset-top="300", data-compensation="#header", data-show-effect="slideInUp", data-hide-effect="slideOutDown")
+        i.material-icons(style="font-size: 36px;") arrow_upward
+    script(src="./cdn/js/hs.core.js")
+    script(src="./cdn/js/hs.go-to.js")
+    //- Note: Need to add script part below the body
+    //- Go to Top End
+    script(type="text/javascript", src="./cdn/js/flickity.pkgd.min.js")
+    script.
+        $(document).ready(function() {
+            $(".top-menu-item:eq(2)").addClass("active");
+            $.HSCore.components.HSGoTo.init('.js-go-to');
+        });

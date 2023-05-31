@@ -1,0 +1,12 @@
+section.bg-dark.spacer-y-4
+    div.container
+        div.row.justify-content-around.align-items-center
+            div.col-md-6.col-lg-5.col-xl-4
+                span.display-4.d-block.mb-lg-0.text-white!= data.headline
+            div.col-md-6
+                p.lead.mb-3.text-white!= data.descript
+                div.d-flex.align-items-center
+                    each bitem, index in data.button_list
+                        a(class=`btn btn-lg ${bitem.class}`, href=bitem.link)!= bitem.caption
+                        if index < data.button_list.length - 1
+                            span.d-block.mx-1.mx-sm-2.text-small.text-light or

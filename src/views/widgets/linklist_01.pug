@@ -1,0 +1,10 @@
+section.bg-white
+    div.container
+        div.row.text-center.text-md-left
+            for litem in data
+                div.col-6.col-lg-3.mb-3.mb-lg-0
+                    a.d-sm-flex(href=litem.link)
+                        i(class=`${litem.icon} mr-sm-3 flex-shrink-0`)
+                        div
+                            h5.mb-1!= litem.info
+                            p.mb-0!= litem.moreinfo

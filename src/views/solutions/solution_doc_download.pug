@@ -1,0 +1,12 @@
+div.bg-white
+    div.container
+        div.row.justify-content-center.pb-2.pb-md-3
+            div.col-12.col-md-11.col-lg-10.col-xl-9
+                headline
+                    h3= data.headline
+                each ditem in data.downloads
+                    p
+                        i.material-icons.align-middle.custom-indent-half keyboard_arrow_right
+                        a.custom-indent-1(href=ditem.link)
+                            span.h6.align-middle= ditem.caption
+                            i.material-icons.align-middle.custom-indent-half cloud_download

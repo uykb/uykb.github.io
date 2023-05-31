@@ -1,0 +1,22 @@
+section.bg-light.pb-0.pt-5
+    div.container
+        div.pb-0.pt-3
+            div.row.justify-content-center.align-items-center
+                div.col-12.mb-3.mb-sm-0.text-center
+                    h1!= data.headline
+                div.col-12.mb-3.text-center
+                    if data.descript != '' && data.descript != undefined
+                        p.lead!= data.descript
+                each clitem in data.productlist
+                    div.col-6.col-lg-3.d-flex
+                        -
+                            var button_link = '#';
+                            if (clitem.id != '' && clitem.id != undefined) {
+                                button_link = `${clitem.id}.html`;
+                            }
+                        a.card.border.rounded.hover-effect(href=button_link)
+                            img.card-img-top(src=clitem.image)
+                            div.card-body
+                                div.d-flex.justify-content-between.align-items-center
+                                    h6.mb-0!= clitem.text
+                                    i.material-icons.text-dark keyboard_arrow_right

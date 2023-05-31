@@ -1,0 +1,12 @@
+section.bg-white.pt-md-0.pb-md-0
+    div.container
+        div.row.justify-content-around.align-items-center.flex-md-row-reverse
+            div.col-9.col-lg-7.pl-md-4.pb-md-4
+                div.d-flex.mb-3
+                    - var n = 0
+                    while n++ < data.stars
+                        i.material-icons.text-warning star
+                span.h2.d-block!= data.quote
+                span!= data.name
+            div.col-3.col-lg-5
+                img.d-none.d-md-block(src=data.image)

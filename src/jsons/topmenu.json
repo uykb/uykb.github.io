@@ -1,0 +1,29 @@
+{
+    "class": "sticky-top",
+    "html": true,
+    "brandlogo": "./assets/imgs/logo-1.svg",
+    "brandlogolink": "./",
+    "menu":
+    [
+        {
+            "title": "首页",
+            "link": "index"
+        },
+        {
+            "title": "产品中心",
+            "link": "product_list"
+        },
+        {
+            "title": "解决方案",
+            "link": "solution_list"
+        },
+        {
+            "title": "企业新闻",
+            "link": "news_list_1"
+        },
+        {
+            "title": "联系我们",
+            "link": "about"
+        }
+    ]
+}

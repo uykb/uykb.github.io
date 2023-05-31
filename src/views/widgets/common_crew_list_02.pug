@@ -1,0 +1,16 @@
+section.bg-light.pb-0.pt-5
+    div.container
+        div.pb-0.pt-0
+            div.row.justify-content-center.align-items-center
+                div.col-12.mb-3.mb-sm-0.text-center
+                    h1!= data.headline
+                div.col-12.mb-3.text-center
+                    if data.descript != '' && data.descript != undefined
+                        p.lead!= data.descript
+                each clitem in data.crewlist
+                    div.col-6.col-md-4.col-lg-3
+                        div.card.bg-light
+                            img.card-img-top.rounded-circle.p-3(src=clitem.image)
+                            div.card-body
+                                h6.card-title.text-center= clitem.title
+                                h5.card-title.text-center= clitem.name
