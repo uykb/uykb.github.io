@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="//cdn.staticfile.net/Primer/21.0.7/primer.css" rel="stylesheet" />
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/16932729?v=4"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="一、玩客云硬件参数
+CPU是晶晨S805 ，32位，ARM 4核1.5GHz
+1G(DDR3)+8G(eMMC)
+两个USB 2.0，HDMI接口，一个千兆网口（RJ45 ）
+二、刷机准备工具
+WIN10电脑一台
+矿渣玩客云
+双公头USB线一根【用于连接电脑和玩客云，用于刷底层包】
+螺丝刀，一把金属镊子，用来短接用（用金属线也是可以的）
+闲置 U 盘一个，或者读卡器配合存储卡也行【U盘用于刷 Armbian 系统】
+晶晨刷机软件 USB Burning Tool，update.img 文件为安卓底包，zip 文件为 armbian 固件
+三、刷机包基本常识
+1、直刷包：直接刷，刷完就OK可以直接使用
+
+优点：
+
+（1）方便快捷，不用U盘等工具
+
+（2）速度快，省去中间过程
+
+缺点：
+
+（1）再次刷机可能需要重新短接
+
+（2）换系统可能需要重新对emmc进行大量读写
+
+2、底包：用于对设备进行引导，引导设备启动USB设备上的系统（类似于PE系统），一般搭配U盘刷机包使用
+
+优点：
+（1）可以随便换系统，一个U盘一个系统
+
+（2）在没将系统输入emmc之前可以不用拆机
+
+缺点：
+
+（1）系统性能受限于USB设备与接口，稳定性难绷（USB2.0的接口我也不好说什么了）
+
+（2）占用一个USB接口
+
+注：如果你将U盘内系统写入emmc的话那基本和直刷包没区别了
+
+3、镜像包：直刷包的内包含了系统镜像，直刷直用
+
+底包和系统镜像分离，底包包含引导，镜像包包含系统镜像，镜像包也就是U盘刷机包
+
+4、选择：如果你身边没有U盘等设备，那肯定只有用直刷包了
+
+当然如果你选择的固件只有U盘刷机包那种，那也只能找一个U盘了
+
+如果你的数据线或者因为成色而导致直刷用的那个USB接口不稳定，那建议用刷底包的方式
+底包因为只包含引导或者部分驱动会刷得很快，而直刷包就需要一个漫长的过程，如果不稳定的话
+就会导致刷机失败以至于要重新刷，那就得不偿失了
+
+同样的，如果你用来U盘引导的那个接口不稳定（用来直刷和引导系统的那个接口不一样）
+所以没有哪个更好的说法，全部看实际情况和你选择的固件包
+
+四、刷机教程
+1、拆机及注意
+玩客云的拆机十分简单，有接口那一侧，外层塑料挡板是双面胶粘上去的，使用撬棒或者一字批起子之类，从缝隙入手，慢慢转圈撬开即可，挡板弹性挺大， 并不容易搞坏。">
+<meta property="og:title" content="玩客云刷rambian">
+<meta property="og:description" content="一、玩客云硬件参数
+CPU是晶晨S805 ，32位，ARM 4核1.5GHz
+1G(DDR3)+8G(eMMC)
+两个USB 2.0，HDMI接口，一个千兆网口（RJ45 ）
+二、刷机准备工具
+WIN10电脑一台
+矿渣玩客云
+双公头USB线一根【用于连接电脑和玩客云，用于刷底层包】
+螺丝刀，一把金属镊子，用来短接用（用金属线也是可以的）
+闲置 U 盘一个，或者读卡器配合存储卡也行【U盘用于刷 Armbian 系统】
+晶晨刷机软件 USB Burning Tool，update.img 文件为安卓底包，zip 文件为 armbian 固件
+三、刷机包基本常识
+1、直刷包：直接刷，刷完就OK可以直接使用
+
+优点：
+
+（1）方便快捷，不用U盘等工具
+
+（2）速度快，省去中间过程
+
+缺点：
+
+（1）再次刷机可能需要重新短接
+
+（2）换系统可能需要重新对emmc进行大量读写
+
+2、底包：用于对设备进行引导，引导设备启动USB设备上的系统（类似于PE系统），一般搭配U盘刷机包使用
+
+优点：
+（1）可以随便换系统，一个U盘一个系统
+
+（2）在没将系统输入emmc之前可以不用拆机
+
+缺点：
+
+（1）系统性能受限于USB设备与接口，稳定性难绷（USB2.0的接口我也不好说什么了）
+
+（2）占用一个USB接口
+
+注：如果你将U盘内系统写入emmc的话那基本和直刷包没区别了
+
+3、镜像包：直刷包的内包含了系统镜像，直刷直用
+
+底包和系统镜像分离，底包包含引导，镜像包包含系统镜像，镜像包也就是U盘刷机包
+
+4、选择：如果你身边没有U盘等设备，那肯定只有用直刷包了
+
+当然如果你选择的固件只有U盘刷机包那种，那也只能找一个U盘了
+
+如果你的数据线或者因为成色而导致直刷用的那个USB接口不稳定，那建议用刷底包的方式
+底包因为只包含引导或者部分驱动会刷得很快，而直刷包就需要一个漫长的过程，如果不稳定的话
+就会导致刷机失败以至于要重新刷，那就得不偿失了
+
+同样的，如果你用来U盘引导的那个接口不稳定（用来直刷和引导系统的那个接口不一样）
+所以没有哪个更好的说法，全部看实际情况和你选择的固件包
+
+四、刷机教程
+1、拆机及注意
+玩客云的拆机十分简单，有接口那一侧，外层塑料挡板是双面胶粘上去的，使用撬棒或者一字批起子之类，从缝隙入手，慢慢转圈撬开即可，挡板弹性挺大， 并不容易搞坏。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://uykb.github.io/post/wan-ke-yun-shua-rambian.html">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/16932729?v=4">
+<title>玩客云刷rambian</title>
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">玩客云刷rambian</h1>
+<div class="title-right">
+    <a href="https://uykb.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/uykb/uykb.github.io/issues/4" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><p>一、玩客云硬件参数<br>
+CPU是晶晨S805 ，32位，ARM 4核1.5GHz<br>
+1G(DDR3)+8G(eMMC)<br>
+两个USB 2.0，HDMI接口，一个千兆网口（RJ45 ）<br>
+二、刷机准备工具<br>
+WIN10电脑一台<br>
+矿渣玩客云<br>
+双公头USB线一根【用于连接电脑和玩客云，用于刷底层包】<br>
+螺丝刀，一把金属镊子，用来短接用（用金属线也是可以的）<br>
+闲置 U 盘一个，或者读卡器配合存储卡也行【U盘用于刷 Armbian 系统】<br>
+晶晨刷机软件 USB Burning Tool，update.img 文件为安卓底包，zip 文件为 armbian 固件<br>
+三、刷机包基本常识<br>
+1、直刷包：直接刷，刷完就OK可以直接使用</p>
+<p>优点：</p>
+<p>（1）方便快捷，不用U盘等工具</p>
+<p>（2）速度快，省去中间过程</p>
+<p>缺点：</p>
+<p>（1）再次刷机可能需要重新短接</p>
+<p>（2）换系统可能需要重新对emmc进行大量读写</p>
+<p>2、底包：用于对设备进行引导，引导设备启动USB设备上的系统（类似于PE系统），一般搭配U盘刷机包使用</p>
+<p>优点：<br>
+（1）可以随便换系统，一个U盘一个系统</p>
+<p>（2）在没将系统输入emmc之前可以不用拆机</p>
+<p>缺点：</p>
+<p>（1）系统性能受限于USB设备与接口，稳定性难绷（USB2.0的接口我也不好说什么了）</p>
+<p>（2）占用一个USB接口</p>
+<p>注：如果你将U盘内系统写入emmc的话那基本和直刷包没区别了</p>
+<p>3、镜像包：直刷包的内包含了系统镜像，直刷直用</p>
+<p>底包和系统镜像分离，底包包含引导，镜像包包含系统镜像，镜像包也就是U盘刷机包</p>
+<p>4、选择：如果你身边没有U盘等设备，那肯定只有用直刷包了</p>
+<p>当然如果你选择的固件只有U盘刷机包那种，那也只能找一个U盘了</p>
+<p>如果你的数据线或者因为成色而导致直刷用的那个USB接口不稳定，那建议用刷底包的方式<br>
+底包因为只包含引导或者部分驱动会刷得很快，而直刷包就需要一个漫长的过程，如果不稳定的话<br>
+就会导致刷机失败以至于要重新刷，那就得不偿失了</p>
+<p>同样的，如果你用来U盘引导的那个接口不稳定（用来直刷和引导系统的那个接口不一样）<br>
+所以没有哪个更好的说法，全部看实际情况和你选择的固件包</p>
+<p>四、刷机教程<br>
+1、拆机及注意<br>
+玩客云的拆机十分简单，有接口那一侧，外层塑料挡板是双面胶粘上去的，使用撬棒或者一字批起子之类，从缝隙入手，慢慢转圈撬开即可，挡板弹性挺大， 并不容易搞坏。</p>
+<p>然而二层挡板就是 6 颗螺丝下掉完事，主板是卡在壳子的卡槽里的，可以捏住 SD 卡槽部分的主板空白位，用点力即可把主板拔出来。<br>
+直刷包地址</p>
+<p><code class="notranslate">https://github.com/hzyitc/armbian-onecloud/releases</code><br>
+四、修改静态ip<br>
+1、修改文件 # nano /etc/network/interfaces<br>
+2、修改如下：</p>
+<pre class="notranslate"><code class="notranslate"># Wired adapter #1
+#allow-hotplug eth0
+#no-auto-down eth0
+# iface eth0 inet dhcp
+auto eth0
+iface eth0 inet static
+address 192.168.1.253
+netmask 255.255.255.0
+gateway 192.168.1.1
+dns-nameservers 8.8.8.8 114.114.114.114
+hwaddress 12:34:56:78:9A:BC
+</code></pre>
+<p>五、安装Docker<br>
+1、换Debian源</p>
+<pre class="notranslate"><code class="notranslate">mv /etc/apt/sources.list /etc/apt/sources.list.bk
+nano /etc/apt/sources.list
+</code></pre>
+<p>2、粘贴</p>
+<pre class="notranslate"><code class="notranslate">deb https://mirrors.ustc.edu.cn/debian/ bullseye main non-free contrib
+deb-src https://mirrors.ustc.edu.cn/debian/ bullseye main non-free contrib
+deb https://mirrors.ustc.edu.cn/debian-security/ bullseye-security main
+deb-src https://mirrors.ustc.edu.cn/debian-security/ bullseye-security main
+deb https://mirrors.ustc.edu.cn/debian/ bullseye-updates main non-free contrib
+deb-src https://mirrors.ustc.edu.cn/debian/ bullseye-updates main non-free contrib
+deb https://mirrors.ustc.edu.cn/debian/ bullseye-backports main non-free contrib
+deb-src https://mirrors.ustc.edu.cn/debian/ bullseye-backports main non-free contrib
+</code></pre>
+<p>可以进入<a href="https://mirrors.tuna.tsinghua.edu.cn/help/debian/" rel="nofollow">清华大学Debian软件源官网</a>定制源<br>
+2024-04-20T02:55:48.png</p>
+<p>更新源报错的解决方法</p>
+<p><code class="notranslate">（E: The repository 'http://apt.armbian.com stretch Release' does not have a Release file.）</code><br>
+编辑 nano /etc/apt/sources.list.d/armbian.list，将 <a href="http://apt.armbian.com/" rel="nofollow">http://apt.armbian.com/</a> 替换为以下链接</p>
+<p><code class="notranslate">https://mirrors.tuna.tsinghua.edu.cn/armbian</code><br>
+或者可以由以下命令完成</p>
+<p><code class="notranslate">sed -i.bak 's#http://apt.armbian.com#https://mirrors.tuna.tsinghua.edu.cn/armbian#g' /etc/apt/sources.list.d/armbian.list</code><br>
+3、保存并更新软件</p>
+<p><code class="notranslate">apt-get update &amp;&amp; apt-get upgrade</code><br>
+4、安装Docker<br>
+docker和iptables不兼容，建议安装前执行</p>
+<pre class="notranslate"><code class="notranslate">update-alternatives --set iptables /usr/sbin/iptables-legacy
+update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
+</code></pre>
+<p>如果报错：update-alternatives: error: no alternatives for iptables<br>
+尝试更新iptables再执行以上两行命令</p>
+<p><code class="notranslate">apt install iptables</code><br>
+完成之后，执行Docker安装可视化一键脚本</p>
+<p><code class="notranslate">bash &lt;(curl -sSL https://linuxmirrors.cn/docker.sh)</code><br>
+5、安装Docker面板</p>
+<p><code class="notranslate">docker run -d --restart=always --name="portainer" -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data 6053537/portainer-ce:2.19.0@sha256:df464e724255c2c3db304b343bec82d4510e507c77893e8ed61e122b9fa42bf1</code><br>
+六、安装FRPC客户端内网穿透<br>
+1、创建frp.ini文件并创建目录</p>
+<pre class="notranslate"><code class="notranslate">mkdir /frp
+vim /frp/frpc.ini
+</code></pre>
+<p>2、编辑frpc.ini配置文件</p>
+<pre class="notranslate"><code class="notranslate">[common]
+server_addr = x.x.x.x
+server_port = 7000
+token = XXXXX
+
+[ssh]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 22
+remote_port = 6000
+</code></pre>
+<p>3、拉取镜像</p>
+<p><code class="notranslate">docker pull snowdreamtech/frpc</code><br>
+4、启动docker容器</p>
+<p><code class="notranslate">docker run --restart=always --network host -d -v /frp/frpc.ini:/etc/frp/frpc.ini --name frpc snowdreamtech/frpc</code><br>
+七、永久性挂载硬盘<br>
+1、查看硬盘名称</p>
+<p><code class="notranslate">fdisk -l</code><br>
+查看刚刚接入的U盘/硬盘并记下其设备名称<br>
+2024-04-20T03:01:12.png<br>
+Device：对应硬盘名称 -Size：对应硬盘大小- Type：对应硬盘格式</p>
+<p>2、格式化硬盘<br>
+Linux硬盘格式需要Etx4,我这个硬盘已经格式化了，再演试一次，使用命令：</p>
+<p><code class="notranslate">mkfs -t ext4 /dev/sda1  #格式化硬盘选择ext4文件系统</code><br>
+此过程会提示Proceed anyway? (y,N)，问你是否继续格式化，输入y回车继续，后面提示其它回车就OK<br>
+2024-04-20T03:02:08.png<br>
+3、挂载硬盘/U盘<br>
+接下来开始挂载硬盘，查看硬盘的UUID，输入：</p>
+<p><code class="notranslate">blkid 硬盘名称（例如blkid /dev/sda1）</code><br>
+UUID="这里面就是UUID"复制下来<br>
+2024-04-20T03:02:50.png<br>
+使用ftp工具连接玩客云找到/etc/fstab文件打开编辑（我使用的finalshell自带ftp工具，如果你装了宝塔直接在宝塔文件里找也可以，当然你也可以使用VI命令行直接编辑）</p>
+<p>在fstab文件后面追加：</p>
+<p><code class="notranslate">UUID=改为你的硬盘UUID   /mnt/随便命名后面创建对应的文件夹最好时英文/   ext4    defaults    0 0</code><br>
+2024-04-20T03:03:15.png<br>
+编辑后保存上传回去，在/mnt/文件夹下创建你刚刚设置的文件夹名称，例如我刚刚设置的是/mnt/Disk，就创建一个Disk文件夹</p>
+<p>回到命令行窗口输入reboot重启玩客云，等1-2分钟重启成功</p>
+<p>进行完全部步骤以后你可能会发现，玩客云的指示灯为什么是红色的？？？<br>
+google 了一圈，查到这是正常现象，镜像的问题，不过并不影响使用。<br>
+觉得红灯碍眼，可以 ssh 进去后运行</p>
+<pre class="notranslate"><code class="notranslate">echo "default-on" &gt;/sys/class/leds/onecloud\:blue\:alive/trigger
+echo "none" &gt;/sys/class/leds/onecloud\:green\:alive/trigger
+echo "none" &gt;/sys/class/leds/onecloud\:red\:alive/trigger
+</code></pre>
+<p>就变成蓝灯常量了chmod +x /etc/rc.local &amp;&amp; nano /etc/rc.local 想开机设置加到 rc.local 里就行</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+</div>
+    <div id="footer">Copyright © <span id="year"></span><a href="https://uykb.github.io"> 决战秋名山 </a>
+<p>
+<span id="runday"></span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a>
+</p>
+
+<script>
+if(""!=""){
+    var now=new Date();
+    var startSite=new Date("");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("year").innerHTML=now.getFullYear();
+    if(""!=""){document.getElementById("runday").innerHTML=" • "+"网站运行"+diffDay+"天"+" • ";}
+    else{document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";}
+}
+</script>
+</div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n\n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","uykb/uykb.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+</script>
+
+
+</html>
