@@ -129,7 +129,7 @@ update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
 `bash <(curl -sSL https://linuxmirrors.cn/docker.sh)`
 5、安装Docker面板
 
-`docker run -d --restart=always --name="portainer" -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data 6053537/portainer-ce:2.19.0@sha256:df464e724255c2c3db304b343bec82d4510e507c77893e8ed61e122b9fa42bf1`
+```docker run -d --restart=always --name="portainer" -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data 6053537/portainer-ce:2.19.0@sha256:df464e724255c2c3db304b343bec82d4510e507c77893e8ed61e122b9fa42bf1```
 六、安装FRPC客户端内网穿透
 1、创建frp.ini文件并创建目录
 
