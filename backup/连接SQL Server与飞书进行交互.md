@@ -1,4 +1,3 @@
-# 连接SQL Server与飞书进行交互连接SQL Server与飞书进行交互
 本文档介绍如何连接SQL Server并通过飞书API发送查询结果。
 
 ## 步骤
